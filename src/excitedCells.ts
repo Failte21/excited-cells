@@ -7,7 +7,7 @@ const getNeighbors = (state: number[], index: number) => {
 
 const updateState = (state: number[]) => {
   const newState = [...Array(state.length).map((_) => 0)];
-  state.forEach((value, index) => {
+  state.forEach((_, index) => {
     const [left, right] = getNeighbors(state, index);
     if (left === 1 && right === 1) newState[index] = 0;
     else if (left === 1 || right === 1) newState[index] = 1;
